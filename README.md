@@ -46,7 +46,7 @@ react native支付宝插件
 ## npm install react-native-alipay-pugin
 
 ####android配置
-1. 设置 `android/setting.gradle`
+1. 设置 `android/setting.gradle` 注意: node_modules前面的空格记得删除,不然无法读取lib
 
     ```
     ...
