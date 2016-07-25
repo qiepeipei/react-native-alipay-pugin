@@ -52,7 +52,11 @@ class Alipay: NSObject {
     let orderString = "\(orderSpec)&sign=\"\(signedString)\"&sign_type=\"RSA\"";
     AlipaySDK.defaultService().payOrder(orderString, fromScheme: appScheme, callback: { (resultDic) -> Void in
       if let Alipayjson = resultDic as? NSDictionary{
-         callback([Alipayjson])
+
+          let resultStatus = Alipayjson.valueForKey("resultStatus") as! String
+          let str = "resultStatus="+resultStatus
+          callback([str])
+
       }
     })
   }

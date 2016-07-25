@@ -18,27 +18,38 @@ react native支付宝插件
 
 
     alipay.pay({
-      productName: "买菜",     //订单名称
-      productDescription: "买2斤", //订单描述
-      amount: 0.01,   //支付金额
-      orderID: "ID998989893232",  //订单id
-      notifyURL: null  //通知回调地址
-    }, (alipayjson)=> {
+            productName: "买菜",     //订单名称
+            productDescription: "买2斤", //订单描述
+            amount: 0.01,   //支付金额
+            orderID: "ID998989893232",  //订单id
+            notifyURL: null  //通知回调地址
+        }, (str)=> {
 
-        if(alipayjson.resultStatus == "9000"){
-            console.log("支付成功");
-        }else if(alipayjson.resultStatus == "8000"){
-            console.log("正在处理中");
-        }else if(alipayjson.resultStatus == "4000"){
-            console.log("订单支付失败");
-        }else if(alipayjson.resultStatus == "6001"){
-            console.log("用户中途取消");
-        }else if(alipayjson.resultStatus == "6002"){
-            console.log("网络连接出错");
-        }
+            if(str.indexOf("9000")>0){
+
+                console.log("支付成功");
+
+            }else if(str.indexOf("8000")>0){
+
+                console.log("正在处理中");
+
+            }else if(str.indexOf("4000")>0){
+
+                console.log("订单支付失败");
+
+            }else if(str.indexOf("6001")>0){
+
+                console.log("用户中途取消");
+
+            }else if(str.indexOf("6002")>0){
+
+                console.log("网络连接出错");
+
+            }
 
 
-    });
+      });
+
       
 	
 
@@ -46,7 +57,7 @@ react native支付宝插件
 ## npm install react-native-alipay-pugin
 
 ####android配置
-1. 设置 `android/setting.gradle` 注意: node_modules前面的空格记得删除,不然无法读取lib
+1. 设置 `android/setting.gradle` 注意: 如果node_modules前面有空格记得删除,不然无法读取lib
 
     ```
     ...
