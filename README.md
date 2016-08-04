@@ -101,18 +101,18 @@ react native支付宝插件
 ###ios配置
 ####打开该目录 .../node_modules/react-native-alipay-pugin/ios/AlipaySDK
 
-![Mou icon1](https://cl.ly/3L0u321Z1d0E/download/alipay01.png)
+![Mou icon1](/assets/a1.png)
 
-![Mou icon1](https://cl.ly/1e1q3m3w0l2M/download/alipay02.png)
+![Mou icon1](/assets/a2.png)
 
 ```
 ../node_modules/react-native-alipay-pugin/ios/alipay/Alipay-Bridging-Header.h
 
 ```
 
-![Mou icon1](https://cl.ly/0N2S0P1B1I3o/download/alipay03.png)
+![Mou icon1](/assets/a3.png)
 
-![Mou icon1](https://cl.ly/2n0C010L430e/download/alipay04.png)
+![Mou icon1](/assets/a4.png)
 
 ```
   <key>CFBundleURLTypes</key>
@@ -132,7 +132,7 @@ react native支付宝插件
 
 ```
 
-![Mou icon1](https://cl.ly/1s041O0R1S2V/download/alipay05.png)
+![Mou icon1](/assets/a5.png)
 
 
 
