@@ -6,63 +6,65 @@ react native支付宝插件
 
 	var Alipay = require('react-native-alipay-pugin');
 
-    var alipay = new Alipay(
-        {   //商户PID
-          partner: "商户PID",
-          // 商户收款账号
-          seller: "商户收款账号",
-          // 商户私钥，pkcs8格式
-          privateKey: ""
-        }
-    );
+    componentDidMount(){
 
-
-    alipay.pay({
-            productName: "买菜",     //订单名称
-            productDescription: "买2斤", //订单描述
-            amount: 0.01,   //支付金额
-            orderID: "ID998989893232",  //订单id
-            notifyURL: null  //通知回调地址
-        }, (str)=> {
-
-            if(str.indexOf("9000")>0){
-
-                console.log("支付成功");
-
-            }else if(str.indexOf("8000")>0){
-
-                console.log("正在处理中");
-
-            }else if(str.indexOf("4000")>0){
-
-                console.log("订单支付失败");
-
-            }else if(str.indexOf("6001")>0){
-
-                console.log("用户中途取消");
-
-            }else if(str.indexOf("6002")>0){
-
-                console.log("网络连接出错");
-
+        var alipay = new Alipay(
+            {   //商户PID
+              partner: "商户PID",
+              // 商户收款账号
+              seller: "商户收款账号",
+              // 商户私钥，pkcs8格式
+              privateKey: ""
             }
+        );
 
 
-      });
+        alipay.pay({
+                productName: "买菜",     //订单名称
+                productDescription: "买2斤", //订单描述
+                amount: 0.01,   //支付金额
+                orderID: "ID998989893232",  //订单id
+                notifyURL: null  //通知回调地址
+            }, (str)=> {
 
-      
+                if(str.indexOf("9000")>0){
+
+                    console.log("支付成功");
+
+                }else if(str.indexOf("8000")>0){
+
+                    console.log("正在处理中");
+
+                }else if(str.indexOf("4000")>0){
+
+                    console.log("订单支付失败");
+
+                }else if(str.indexOf("6001")>0){
+
+                    console.log("用户中途取消");
+
+                }else if(str.indexOf("6002")>0){
+
+                    console.log("网络连接出错");
+
+                }
+
+
+          });
+
+    }
 	
 
 
 ## npm install react-native-alipay-pugin
 
 ####android配置
-1. 设置 `android/setting.gradle` 注意: 如果node_modules前面有空格记得删除,不然无法读取lib
+1. 设置 `android/setting.gradle`
 
     ```
     ...
 	include ':aliplay'
-	project(':aliplay').projectDir = new File(rootProject.projectDir, '../	node_modules/react-native-alipay-pugin/android/aliplay')
+	project(':aliplay').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-alipay-pugin/android/aliplay')
 
 	
     ```
