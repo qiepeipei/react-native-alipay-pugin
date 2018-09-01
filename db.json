@@ -1,11 +1,5 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "hello"
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  "package":"com.rn56",
+  "version":"111",
+  "channel":"jjw",
 }
